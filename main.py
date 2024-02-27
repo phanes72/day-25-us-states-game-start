@@ -1,18 +1,15 @@
-import turtle
 import pandas
+from screen import USMapScreen
 
+game_still_on = True
 data = pandas.read_csv("50_states.csv")
 df = pandas.DataFrame(data)
 
 # Screen
-screen = turtle.Screen()
-screen.title("US States Game")
-image = "blank_states_img.gif"
-turtle.addshape(image)
-turtle.shape(image)
+us_map = USMapScreen()
 
 # Get user info
-answer_state = screen.textinput(title="Guess the State", prompt="What's another name of a state")
+answer_state = us_map.get_text_input()
 row = df[df.state == answer_state]
 
 # populate user info
@@ -22,4 +19,4 @@ y = row.y.values[0]
 
 print(f"state={state}, x={x}, y={y}")
 
-screen.exitonclick()
+us_map.exitonclick()
