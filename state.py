@@ -7,6 +7,7 @@ FONT = ("Courier", 24, "normal")
 class State(Turtle):
     def __init__(self):
         super().__init__()
+        self.hideturtle()
         self.penup()
 
     def write_st(self, state, x, y):

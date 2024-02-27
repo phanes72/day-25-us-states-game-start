@@ -1,4 +1,5 @@
 import pandas
+
 from screen import USMapScreen
 from state import State
 
@@ -17,12 +18,17 @@ st = State()
 while game_still_on:
     answer_state = us_map.get_text_input()
     row = df[df.state == answer_state]
-    state = row.state.values[0]
-    x = row.x.values[0]
-    y = row.y.values[0]
+    print(f"row size = {row.size}")
+    if row.size > 1:
+        us_map.increment_score()
+        state_name = row.state.values[0]
 
-    st.write_st(state, x, y)
+        x = row.x.values[0]
+        y = row.y.values[0]
 
-    print(f"state={state}, x={x}, y={y}")
+        st.write_st(state_name, x, y)
+        continue
+    game_still_on = False
+    us_map.end_game()
 
 us_map.exitonclick()
