@@ -10,9 +10,9 @@ class USMapScreen(Turtle):
     def __init__(self):
         super().__init__()
         self.screen = turtle.Screen()
-        self.screen.setup(width, height)
+        # self.screen.setup(width, height)
 
-        self.states_guessed = 0
+        self.states_guessed = -1
         self.num_of_states = 50
         self.screen.title = "US States Game!!!"
 
@@ -36,6 +36,14 @@ class USMapScreen(Turtle):
         self.increment_score()
         input_title = str(self.states_guessed) + "/" + str(self.num_of_states)
         self.screen.textinput(title=input_title, prompt="What's another name of a state")
+
+    def write_state(self, state, x, y):
+        self.clear()
+        self.penup()
+        self.goto(x, y)
+        self.write(state)
+
+        self.populate_title()
 
     def exitonclick(self):
         self.screen.exitonclick()
