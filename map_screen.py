@@ -24,7 +24,6 @@ class USMapScreen(Turtle):
         self.textinput = self.get_text_input
         self.input_title = "Guess"
 
-    # @property
     def get_text_input(self):
         self.populate_title()
         return self.screen.textinput(title=str(self.input_title), prompt="What's another name of a state")
