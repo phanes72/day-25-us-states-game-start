@@ -1,6 +1,6 @@
 import pandas
 
-from screen import USMapScreen
+from map_screen import USMapScreen
 from state import State
 
 game_still_on = True
@@ -10,9 +10,6 @@ df = pandas.DataFrame(data)
 # Screen
 us_map = USMapScreen()
 st = State()
-
-# Get user info
-
 
 # populate user info
 while game_still_on:
