@@ -22,7 +22,7 @@ class USMapScreen(Turtle):
         self.num_guesses = 0
 
         self.textinput = self.get_text_input
-        self.input_title = "Guess yo ass!!"
+        self.input_title = "Guess"
 
     # @property
     def get_text_input(self):
