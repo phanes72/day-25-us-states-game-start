@@ -16,6 +16,9 @@ while game_still_on:
     answer_state = us_map.get_text_input()
     row = df[df.state == answer_state]
 
+    if answer_state.upper() == "EXIT":
+        game_still_on = False
+
     if row.size > 1:
         us_map.increment_score()
         state_name = row.state.values[0]
