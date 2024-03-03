@@ -15,7 +15,7 @@ st = State()
 while game_still_on:
     answer_state = us_map.get_text_input()
     row = df[df.state == answer_state]
-    # print(f"row size = {row.size}")
+
     if row.size > 1:
         us_map.increment_score()
         state_name = row.state.values[0]
